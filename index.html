@@ -42,8 +42,8 @@
         <div class="row">
             <div class="col-md-6 col-xs-6 panel-group text-center">
                 <div class="panel panel-primary" id="panel1">
-                    <div class="panel panel-heading" id="panel-heading1">SCORES</div>
-                    <div class="panel panel-body" id="panel-body1">Your scores</div>
+                    <div class="panel panel-heading" id="panel-heading1">PLAYER</div>
+                    <div class="panel panel-body" id="panel-body1">Player Name</div>
                 </div>
             </div>
             <div id="divider"></div>
@@ -57,8 +57,7 @@
         <div class="col-md-12 col-xs-12 text-center">     
             <div>
                 <div id="divider"></div>
-                <canvas id="canvas" width="200" height="100"></canvas>
-                <br/>
+		<div id='game_area'>GAME AREA</div>
                 <div id="divider"></div>
                 <button id="btn1" class="btn btn-primary text-center">Game Start</button>
                 <div id="divider"></div>
@@ -68,5 +67,12 @@
 
 <!-- CUSTOM JAVASCRIPT -->
     <script src="js/script.js"></script>
+    <script>
+	$(document).ready(function(){
+		$('#btn1').on('click', function(){
+			game();	
+		});
+	});
+    </script>
 </body>
 </html>

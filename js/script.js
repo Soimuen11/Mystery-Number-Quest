@@ -1,44 +1,35 @@
-var list_scores = [];
-var score = 0;
-var attempts = 0;
+const name = [];
+const list_attempts = [];
+let attempts = 0;
 
 function game(){
-    var mystery = Math.ceil(Math.random()*100);
-    var player = prompt("Please, enter your name");
-    //console.log(player);
-    var user_nb = parseInt(prompt("Please input number:"))
-    //console.log(user_nb);
-    while(user_nb != mystery) {
-        //console.log(player);
-        console.log(user_nb);
-        if (user_nb > mystery){
-            prompt("It's -")
-            var user_nb = parseInt(prompt("Please input number:"))
-            attempts++ 
-        }else if (user_nb > mystery){
-            prompt("It's +")
-            var user_nb = parseInt(prompt("Please input number:"))
-            attempts++
-        }else {
-            prompt("Not A Number!")
-            var user_nb = parseInt(prompt("Try again:"))
-        }
-    }
-    prompt("Well played!")
-}
-
-function start_game() {
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    ctx.font = "20px Georgia";
-    ctx.fillText("Hey Suckers!", 45,50);
-    //game();
+	let mystery = Math.ceil(Math.random()*100);
+	let player = prompt("Please, enter your name");
+	$('#panel-body1').html(player);
+	name.push(player);
+	let user_nb = parseInt(prompt("Please input number:"))
+	while(user_nb != mystery) {
+		if (user_nb > mystery){
+			$('#game_area').html("it's -")
+			user_nb = parseInt(prompt("Please input number:"))
+			attempts++ 
+		}else if (user_nb < mystery){
+			$('#game_area').html("it's +")
+			user_nb = parseInt(prompt("Please input number:"))
+			attempts++
+		}else {
+			$('#game_area').html("NaN")
+			user_nb = parseInt(prompt("Try again:"))
+		}
+	}
+	$('#game_area').hmtl("Well played")
+	console.log(attempts);
+	list_attempts.push(attempts);
+	$('#panel-body2').html(attempts);
 }
 
 
 
-document.getElementById("panel-body1").innerHTML = score;
-document.getElementById("panel-body2").innerHTML = attempts;
-document.getElementById("btn1").onclick = start_game();
+
 
 

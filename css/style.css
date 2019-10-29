@@ -3,9 +3,9 @@ html, body{
     height:100%;
 }
 
-#canvas{
-    border: 5px solid black;
-    outline: 5px double darkred;
+#game_area{
+	border: 1px solid red;
+	margin: auto;
 }
 
 #divider{
@@ -17,15 +17,6 @@ h1{
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
     font-size: large;
-}
-
-#frame{
-    /*le texte sort du cadre quand on rétrécie la fenêtre
-    = problemem à résoudre!!! */
-    border:3px solid red;
-    outline: 5px double darkred;
-    width:50%;
-    overflow:auto;
 }
 
 .col-centered{
