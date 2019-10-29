@@ -45,3 +45,7 @@ em{
 strong{
     font-style: bold;
 }
+
+ul, li{
+	list-style-type:none;
+}
