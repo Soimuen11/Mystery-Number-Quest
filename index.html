@@ -29,20 +29,22 @@
                     </div>
                 <div class="jumbotron text-center">
                     <h4><strong>RULES:</strong></h4>
-                    <p>Ladies and Gentlemen, before pressing the button below and beginning to search <br/>
-                        the mystery number, I advise you to read these few lines:
+                    <p>Ladies and Gentlemen, before beginning to search for<br/>
+                        the mystery number, please read these few lines:
                     </p>
-                    <ul>
-                        <li>The number which you are looking for is b/w 1 and 100</li>
-                        <li>It is useless to enter letters or negative numbers</li>
-                        <li>MTFBWYA</li>
-                    </ul>
+                    <ol>
+                        <li>The number which you are looking for is between 1 and 100.</li>
+                        <li>Your name is displayed in the left panel.</li>
+                        <li>Your number of guesses is displayed in the right panel</li>
+                        <li>Please, do not enter letters or negative numbers.</li>
+                        <li>If your guess is incorrect, you may read the computer's advice.</li>
+                    </ol>
                 </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-xs-6 panel-group text-center">
                 <div class="panel panel-primary" id="panel1">
-                    <div class="panel panel-heading" id="panel-heading1">PLAYER</div>
+                    <div class="panel panel-heading" id="panel-heading1">Player</div>
                     <div class="panel panel-body" id="panel-body1">Player Name</div>
                 </div>
             </div>
@@ -57,22 +59,29 @@
         <div class="col-md-12 col-xs-12 text-center">     
             <div>
                 <div id="divider"></div>
-		<div id='game_area'>GAME AREA</div>
-                <div id="divider"></div>
-                <button id="btn1" class="btn btn-primary text-center">Game Start</button>
+				<div id='advice_zone'>Advice zone: For now, I have nothing to say!</div>
+				<form id="game_area">
+					<label for="player_number">Enter a number:</label><br>
+					<input type="text" id="player_input" name="fname"><br>
+				</form>
+				<div id="divider"></div>
+                <button id="btn1" class="btn btn-primary text-center">Take a Guess</button>
                 <div id="divider"></div>
             </div>
         </div>    
     </div>
 
-<!-- CUSTOM JAVASCRIPT -->
-    <script src="js/script.js"></script>
-    <script>
-	$(document).ready(function(){
-		$('#btn1').on('click', function(){
-			game();	
-		});
-	});
-    </script>
+	<!-- SWEET ALERTS -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<!-- CUSTOM JAVASCRIPT -->
+	<script src="js/script.js"></script>
+	<!-- <script> -->
+	<!-- 	$(document).ready(function(){ -->
+	<!-- 		$('#btn1').on('click', function(){ -->
+	<!-- 			game(); -->	
+	<!-- 		}); -->
+	<!-- 	}); -->
+	<!-- </script> -->
 </body>
 </html>
