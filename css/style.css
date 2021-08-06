@@ -4,14 +4,13 @@ html, body{
 }
 
 #game_area{
-	border: 1px solid red;
 	margin: auto;
+	width: 60%;
 }
 
 #divider{
     height:10px;
 }
-
 
 h1{
     text-align: center;
@@ -37,6 +36,6 @@ strong{
     font-style: bold;
 }
 
-ul, li{
-	list-style-type:none;
-}
+/* ul, li{ */
+/* 	list-style-type:none; */
+/* } */
