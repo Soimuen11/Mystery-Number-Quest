@@ -1,35 +1,30 @@
-const name = [];
-const list_attempts = [];
+// define mystery number
+const mystery = Math.ceil(Math.random() * 100)
+console.log(mystery)
+// number of attemps in one game
 let attempts = 0;
+// get the name of current player
+let player_name = prompt("Hello mate! Just enter a name alright!")
+let panel_body1 = document.getElementById("panel-body1")
+panel_body1.innerHTML = player_name
 
-function game(){
-	let mystery = Math.ceil(Math.random()*100);
-	let player = prompt("Please, enter your name");
-	$('#panel-body1').html(player);
-	name.push(player);
-	let user_nb = parseInt(prompt("Please input number:"))
-	while(user_nb != mystery) {
-		if (user_nb > mystery){
-			$('#game_area').html("it's -")
-			user_nb = parseInt(prompt("Please input number:"))
-			attempts++ 
-		}else if (user_nb < mystery){
-			$('#game_area').html("it's +")
-			user_nb = parseInt(prompt("Please input number:"))
-			attempts++
-		}else {
-			$('#game_area').html("NaN")
-			user_nb = parseInt(prompt("Try again:"))
-		}
+let button = document.getElementById("btn1");
+let attempt_area = document.getElementById("panel-body2")
+let advice_zone = document.getElementById("advice_zone")
+// click event loop
+button.addEventListener("click", function(){
+	let player_input = document.getElementById("player_input").value
+	let player_number = parseInt(player_input)
+	attempts += 1
+	attempt_area.innerHTML = attempts;
+	if (player_number < mystery){
+		advice_zone.innerHTML = "Go higher!"
+	}else if (player_number > mystery){
+		advice_zone.innerHTML = "Lower than that!"
+	}else if(player_number == mystery){
+		swal("Hey " + player_name + "!", " You have just won in " + attempts + " attempts!")
 	}
-	$('#game_area').hmtl("Well played")
-	console.log(attempts);
-	list_attempts.push(attempts);
-	$('#panel-body2').html(attempts);
-}
-
-
-
-
-
-
+	else{
+		advice_zone.innerHTML = "I don't get it. You sure it's a number?"
+	}
+})
